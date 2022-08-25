@@ -2,6 +2,25 @@
   font-family: nassa;
   src: url(../../build/font/nassa.otf);
 }
+.mantenimiento {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+}
+.mantenimiento p {
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -19,6 +38,15 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0.7rem;
+  background-color: rgb(25, 25, 25);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(80, 80, 80);
 }
 
 p {
@@ -374,7 +402,7 @@ nav {
   height: 6rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #FFF;
   position: sticky;
   top: 0;
@@ -384,6 +412,7 @@ nav .nav-title {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: 10rem;
 }
 nav .nav-title .online {
   width: 8rem;
@@ -418,14 +447,64 @@ nav .nav-title h1 {
 nav .nav-title h1 i {
   font-size: 3rem;
 }
+nav .menu {
+  margin-right: 7rem;
+  transition: all 0.7s;
+}
 nav .menu a {
   color: rgb(25, 25, 25);
   padding: 0.8rem 2rem;
   font-weight: bold;
 }
 nav .menu .active-nav {
+  transition: all 0.1s;
   background-color: #fcb900;
   border-radius: 2.7rem;
+}
+@media (max-width: 768px) {
+  nav .menu {
+    position: absolute;
+    top: 6rem;
+    left: 100%;
+    height: calc(100vh - 6rem);
+    width: 100vw;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  nav .menu a {
+    font-size: 3rem;
+  }
+}
+nav .bars-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+  nav .nav-title {
+    margin-left: 5rem;
+  }
+  nav .bars-menu {
+    cursor: pointer;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  nav .bars-menu .bars {
+    width: 3rem;
+    height: 0.5rem;
+    background-color: #000;
+    border-radius: 1rem;
+  }
+  nav .active {
+    left: 0;
+  }
 }
 
 @keyframes online {
