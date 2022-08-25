@@ -2,6 +2,25 @@
   font-family: nassa;
   src: url(../../build/font/nassa.otf);
 }
+.mantenimiento {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+}
+.mantenimiento p {
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -19,6 +38,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 p {
